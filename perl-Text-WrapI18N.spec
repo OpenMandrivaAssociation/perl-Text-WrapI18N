@@ -9,6 +9,7 @@ URL:		http://www.cpan.org
 BuildRequires:	perl-devel
 BuildRequires:	perl(Text::CharWidth)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Text::WrapI18N - Line wrapping module with support for multibyte, fullwidth,

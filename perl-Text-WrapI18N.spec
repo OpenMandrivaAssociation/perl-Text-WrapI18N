@@ -1,7 +1,7 @@
 Summary:	Text-WrapI18N module for perl
 Name:		perl-Text-WrapI18N
 Version:	0.06
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL or Artistic
 Group:		Development/Perl
 Source0:	Text-WrapI18N-%{version}.tar.bz2

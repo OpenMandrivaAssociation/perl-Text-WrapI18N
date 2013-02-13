@@ -1,15 +1,15 @@
-%define upstream_name    Text-WrapI18N
-%define upstream_version 0.06
+%define modname    Text-WrapI18N
+%define modver 0.06
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	3
 
 Summary:	Text-WrapI18N module for perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.bz2
+URL:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.bz2
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Text::CharWidth)
@@ -28,7 +28,7 @@ like most of east Asian characters). Also, minimal handling of languages which
 doesn't use whitespaces between words (like Chinese and Japanese) is supported.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{modname}-%{modver}
 
 # perl path hack
 find . -type f | xargs perl -p -i -e "s|^#!/usr/local/bin/perl|#!%{_bindir}/perl|g"
@@ -45,7 +45,6 @@ make test
 %doc Changes README
 %{perl_vendorlib}/Text/WrapI18N.pm
 %{_mandir}/man3/*
-
 
 %changelog
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.60.0-1mdv2010.0

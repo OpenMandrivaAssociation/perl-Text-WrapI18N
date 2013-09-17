@@ -1,19 +1,17 @@
 %define modname    Text-WrapI18N
 %define modver 0.06
 
+Summary:	Text-WrapI18N module for perl
 Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
 Release:	4
-
-Summary:	Text-WrapI18N module for perl
-License:	GPL+ or Artistic
+License:	GPLv2+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{modname}
+Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.bz2
-
+BuildArch:	noarch
 BuildRequires:	perl-devel
 BuildRequires:	perl(Text::CharWidth)
-BuildArch:	noarch
 
 %description
 Text::WrapI18N - Line wrapping module with support for multibyte, fullwidth,
@@ -28,14 +26,16 @@ like most of east Asian characters). Also, minimal handling of languages which
 doesn't use whitespaces between words (like Chinese and Japanese) is supported.
 
 %prep
-%setup -q -n %{modname}-%{modver}
+%setup -qn %{modname}-%{modver}
 
 # perl path hack
 find . -type f | xargs perl -p -i -e "s|^#!/usr/local/bin/perl|#!%{_bindir}/perl|g"
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor </dev/null
-make
+%make
+
+%check
 make test
 
 %install
@@ -45,28 +45,4 @@ make test
 %doc Changes README
 %{perl_vendorlib}/Text/WrapI18N.pm
 %{_mandir}/man3/*
-
-%changelog
-* Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.60.0-1mdv2010.0
-+ Revision: 405718
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.06-4mdv2009.0
-+ Revision: 258634
-- rebuild
-
-* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.06-3mdv2009.0
-+ Revision: 246644
-- rebuild
-
-* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 0.06-1mdv2008.1
-+ Revision: 136362
-- restore BuildRoot
-
-  + Thierry Vignaud <tvignaud@mandriva.com>
-    - kill re-definition of %%buildroot on Pixel's request
-
-
-* Fri Jul 14 2006 Oden Eriksson <oeriksson@mandriva.com> 0.06-1mdv2007.0
-- initial Mandriva package
 

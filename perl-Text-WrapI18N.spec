@@ -3,7 +3,7 @@
 
 Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
-Release:	4
+Release:	5
 
 Summary:	Text-WrapI18N module for perl
 License:	GPL+ or Artistic

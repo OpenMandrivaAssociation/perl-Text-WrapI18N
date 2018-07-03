@@ -12,6 +12,7 @@ Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	perl-devel
 BuildRequires:	perl(Text::CharWidth)
+BuildRequires:  perl(Test::Simple)
 
 %description
 Text::WrapI18N - Line wrapping module with support for multibyte, fullwidth,

@@ -3,12 +3,12 @@
 
 Summary:	Text-WrapI18N module for perl
 Name:		perl-%{modname}
-Version:	%{perl_convert_version %{modver}}
-Release:	16
+Version:	%{modver}
+Release:	17
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.bz2
+Url:		https://metacpan.org/dist/Text-WrapI18N
+Source0:	https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-WrapI18N-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl-devel
